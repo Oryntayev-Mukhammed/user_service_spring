@@ -1,44 +1,44 @@
 # User Service Spring
 
-## Описание
-User Service Spring - это микросервис, разработанный с использованием Spring Boot, который управляет пользователями в приложении. Этот сервис предоставляет API для создания, обновления, удаления и получения пользователей.
+## Description
+User Service Spring is a microservice developed using Spring Boot that manages users within the application. This service provides an API for creating, updating, deleting, and retrieving users.
 
-## Технологии
+## Technologies
 - Spring Boot
 - Spring Data JPA
 - PostgreSQL
 
-## Запуск проекта
-Для запуска проекта необходимо:
-1. Склонировать репозиторий:
+## Running the Project
+To run the project, follow these steps:
+1. Clone the repository:
    ```bash
    git clone <URL>
-2. Перейти в директорию проекта:
+2. Navigate to the project directory:
    ```bash
    cd task_service_spring
-4. Запустить приложение:
+4. Start the application:
    ```bash
    ./mvnw spring-boot:run
-5. User Service будет доступен по адресу http://localhost:8080/users.
-
-## Эндпоинты
+5. The User Service will be available at http://localhost:8080/users.
+   
+## Endpoints
 GET /users
-Получить список всех пользователей.
+Retrieve a list of all users.
 
 GET /users/{id}
-Получить информацию о пользователе по идентификатору.
+Get user information by identifier.
 
 POST /users
-Создать нового пользователя.
-Тело запроса должно содержать JSON с информацией о пользователе.
+Create a new user.
+The request body should contain JSON with user information.
 
 PUT /users/{id}
-Обновить информацию о пользователе по идентификатору.
-Тело запроса должно содержать JSON с обновленной информацией о пользователе.
+Update user information by identifier.
+The request body should contain JSON with the updated user information.
 
 DELETE /users/{id}
-Удалить пользователя по идентификатору.
+Delete a user by identifier.
 
 ---
 
-Вы можете настроить эти файлы в зависимости от вашей структуры проекта, специфических требований и особенностей реализации. Если вам нужны дополнительные разделы, такие как "Установка" или "Конфигурация", дайте знать!
+You can customize these files according to your project structure, specific requirements, and implementation details. If you need additional sections such as "Installation" or "Configuration," please let me know!
