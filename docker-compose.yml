@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: base
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: GG201619852003g
+    ports:
+      - "5433:5432"
+    # volumes:
+    #   - postgres_data:/var/lib/postgresql/data 
+  app:
+    image: smattman/tasksert
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+    environment:      
+      - SERVER_PORT=8081
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/base
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=GG201619852003g
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_SHOW_SQL=true
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQLDialect
+# volumes:
+#   postgres_data:
