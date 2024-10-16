@@ -15,7 +15,9 @@ Task Service Spring - это микросервис, разработанный 
    ```bash
    git clone <URL>
 2. Перейти в директорию проекта:
+   ```bash
    cd task_service_spring
-3. Запустить приложение:
+4. Запустить приложение:
+   ```bash
    ./mvnw spring-boot:run
 
