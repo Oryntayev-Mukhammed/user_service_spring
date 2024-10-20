@@ -19,6 +19,7 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
         UserDTO user = userService.getUserById(id);
@@ -42,4 +43,18 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/register")
+    public ResponseEntity<String> registerUser(@RequestBody UserDTO userDTO) {
+        String message = userService.registerUser(userDTO);
+        return ResponseEntity.ok(message);
+    }
+
+    @PostMapping("/authenticate")
+    public ResponseEntity<String> authenticateUser(@RequestParam String username, @RequestParam String password) {
+        String token = userService.authenticateUser(username, password);
+        return ResponseEntity.ok(token);
+    }
+
+
 }
