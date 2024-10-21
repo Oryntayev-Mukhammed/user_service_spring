@@ -4,6 +4,7 @@ public class UserDTO {
     private Long id;
     private String email;
     private String fullName;
+    private String password; // Добавлено поле для пароля
 
     // Геттеры и сеттеры
     public Long getId() {
@@ -28,5 +29,13 @@ public class UserDTO {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

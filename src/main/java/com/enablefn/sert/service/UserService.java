@@ -71,12 +71,12 @@ public class UserService {
 
         // Создаем тело запроса
         Map<String, Object> userMap = new HashMap<>();
-        userMap.put("username", userDTO.getEmail());
+        userMap.put("username", userDTO.getEmail()); // Используем email как логин
         userMap.put("email", userDTO.getEmail());
         userMap.put("enabled", true);
         userMap.put("firstName", userDTO.getFullName());
         userMap.put("lastName", userDTO.getFullName());
-        userMap.put("credentials", List.of(Map.of("type", "password", "value", "yourPassword", "temporary", false))); // Укажи пароль
+        userMap.put("credentials", List.of(Map.of("type", "password", "value", userDTO.getPassword(), "temporary", false))); // Указываем пароль из DTO
 
         HttpEntity<Map<String, Object>> request = new HttpEntity<>(userMap, headers);
         ResponseEntity<Void> response = restTemplate.postForEntity(url, request, Void.class);
